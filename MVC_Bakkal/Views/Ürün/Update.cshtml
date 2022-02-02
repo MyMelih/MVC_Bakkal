@@ -1,0 +1,95 @@
+﻿@model MVC_Bakkal.Models.Ürün
+
+@{
+    ViewBag.Title = "Update";
+}
+ 
+<h2>Update</h2>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4>Ürün</h4>
+    <hr />
+        <!-- Form yapısından faydalanılarak güncellemek istenilen yeni veriler alınmıştır ve güncelleme fonkiyounan gönderilmiştir. 
+            Verinin önceki değeri System.Data.DataRow yapısı kullanılarak güncelenilecek verilerin value yardımıyla default değerleri atanmıştır.--> 
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @foreach (System.Data.DataRow DR in ViewBag.emprecord.Rows)
+    {
+        <div class="form-group">
+
+            <form action="/Kategori/Update" method="post">
+
+                <label>
+                    <span>Ürün Adı :</span>
+                    <input type="text" name="u_adi"  style="margin-top:50px" value="@DR["u_adi"]"/>
+                </label>
+                <label>
+                    <span>Ürün Barkodu :</span>
+                    <input type="text" name="u_barkodu" style="margin-top:50px" value="@DR["u_barkodu"]" />
+                </label>
+
+                <label>
+                    <span>Üretim Tarihi:</span>
+                    <input type="date" name="üretim_tarihi" placeholder="" style="margin-top:50px"  value="@DR["u_uretim_tarihi"]" />
+                </label>
+                <label>
+                    <span>Tüketim Tarihi :</span>
+                    <input type="date" name="tüketim_tarihi" placeholder="" style="margin-top:50px" value="@DR["u_tuketim_tarihi"]"/>
+
+                </label>
+
+
+                <label>
+                    <span>Fiyat:</span>
+                    <input type="number" name="fiyat" style="margin-top:50px" value="@DR["u_fiyat"]"/>
+                </label>
+
+                <label>
+                    <span>Ağırlık :</span>
+                    <input type="number" name="agirlik" style="margin-top:50px" value="@DR["u_agirlik"]" />
+                </label>
+
+                <label>
+                    <span>Renk :</span>
+                    <input type="text" name="renk" style="margin-top:50px"  value="@DR["u_rengi"]"/>
+                </label>
+
+
+                <label>
+                    <span>Stok Id :</span>
+                    <input type="number" name="stok_id" style="margin-top:50px" value="@DR["stok_id"]" />
+                </label>
+
+
+                <label>
+                    <span>Marka Id :</span>
+                    <input type="number" name="marka_id" style="margin-top:50px" value="@DR["marka_id"]" />
+                </label>
+
+
+                <label>
+                    <span>Kategori Id :</span>
+                    <input type="number" name="k_id" style="margin-top:50px"  value="@DR["kategori_id"]"/>
+                </label>
+
+
+
+            </form>
+
+        </div>
+
+    }
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Update" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Ürün", "List")
+</div>

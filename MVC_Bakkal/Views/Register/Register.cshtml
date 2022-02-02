@@ -1,0 +1,69 @@
+﻿
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+    <div class="container">
+        <div class="title">Kayıt Ol</div>
+        <div class="content">
+
+
+            <!--< Kullanıcı Kayıt Formu oluşturuldu">-->
+            <form action="/Register/Register" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+
+                        <span class="details">İsim</span>
+                        <input type="text" placeholder="Enter your name" name="k_adi" value="">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Soyisim</span>
+                        <input type="text" placeholder="Enter your username" name="k_soyadi" value="">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Email</span>
+                        <input type="text" placeholder="Enter your email" name="k_eposta" value="">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Telefon No</span>
+                        <input type="text" placeholder="Confirm your password" name="k_telefon" value="">
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Kullanıcı Adı</span>
+                        <input type="text" placeholder="Enter your number" name="k_kullaniciadi" value="">
+                    </div>
+
+                    <div class="input-box">
+                        <span class="details">Şifre</span>
+                        <input type="text" placeholder="Enter your password" name="k_parola" value="">
+                    </div>
+
+
+
+
+
+
+
+
+                    <div class="input-box">
+                        <span class="details">Rol Id</span>
+                        <input type="number" placeholder="Confirm your password" name="rol_id" value="">
+                    </div>
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
+
+                <button type="button" class="btn btn-success"> <a href="/Rol/Add" style="text-decoration: none; color: white">Yeni Bir Rol Ekle</a> </button>
+            </form>
+
+        </div>
+    </div>
+
+

@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<body>
+    <div class="center">
+
+        <form action="/Ürün/Add" method="post">
+            <!-- Bir form yapısı oluşurulmuş içindeki input değerleri add fonskiyoununa gönderilmiştir buton yardımıyla -->
+            <h3>
+                Ürün Bilgilerini Girin
+
+            </h3>
+         
+            <label>
+                <span>Ürün Adı :</span>
+                <input type="text" name="u_adi" placeholder="Ürün adı girin.." style="margin-top:50px" />
+            </label>
+            <label>
+                <span>Ürün Barkodu :</span>
+                <input type="text" name="u_barkodu" style="margin-top:50px" />
+            </label>
+
+            <label>
+                <span>Üretim Tarihi:</span>
+                <input type="date" name="üretim_tarihi" placeholder="" style="margin-top:50px" />
+            </label>
+            <label>
+                <span>Tüketim Tarihi :</span>
+                <input type="date" name="tüketim_tarihi" placeholder="" style="margin-top:50px" />
+
+            </label>
+
+
+            <label>
+                <span>Fiyat:</span>
+                <input type="number" name="fiyat" style="margin-top:50px" />
+            </label>
+
+            <label>
+                <span>Ağırlık :</span>
+                <input type="number" name="agirlik" style="margin-top:50px" />
+            </label>
+
+            <label>
+                <span>Renk :</span>
+                <input type="text" name="renk" style="margin-top:50px" />
+            </label>
+
+
+            <label>
+                <span>Stok Id :</span>
+                <input type="number" name="stok_id" style="margin-top:50px" />
+            </label>
+
+
+            <label>
+                <span>Marka Id :</span>
+                <input type="number" name="marka_id" style="margin-top:50px" />
+            </label>
+
+
+            <label>
+                <span>Kategori Id :</span>
+                <input type="number" name="k_id" style="margin-top:50px" />
+            </label>
+
+            <div class="button">
+                <input type="submit" value="Add" style="margin-top:50px ; margin-left:10px">
+            </div>
+
+           
+        </form>
+    </div>

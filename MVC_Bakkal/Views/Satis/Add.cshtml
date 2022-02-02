@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="center">
+    <h1>Satis Ekle</h1>
+
+    <form action="/Satis/Add" method="post">
+        <!-- Bir form yapısı oluşurulmuş içindeki input değerleri add fonskiyoununa gönderilmiştir buton yardımıyla -->
+        <h3>
+            Satis Bilgilerini Girin
+
+        </h3>
+
+
+        <label>
+            <span>Kullanıcı Id :</span>
+            <input type="number" name="k_id" style="margin-top:50px" />
+
+        </label>
+        <label>
+            <span>Miktar :</span>
+            <input type="number" name="miktar" style="margin-top:50px" />
+
+        </label>
+        <label>
+            <span>Satis Tarihi :</span>
+            <input type="date" name="s_tarih" style="margin-top:50px" />
+
+        </label>
+        <label>
+            <span>Durum :</span>
+            <input type="text" name="durum" style="margin-top:50px" />
+
+        </label>
+        <label>
+            <span>Fiyat :</span>
+            <input type="number" name="fiyat" style="margin-top:50px" />
+
+        </label>
+        <label>
+            <span>İskonto :</span>
+            <input type="number" name="iskonto" style="margin-top:50px" />
+
+        </label>
+        <label>
+            <span>Ürün :</span>
+            <input type="number" name="ürün_id" style="margin-top:50px" />
+
+        </label>
+
+
+
+
+        <div class="button">
+            <input type="submit" value="Add" style="margin-top:50px ; margin-left:10px">
+        </div>
+
+     
+    </form>
+</div>
+
+

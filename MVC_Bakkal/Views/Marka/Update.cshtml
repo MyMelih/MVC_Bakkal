@@ -1,0 +1,48 @@
+﻿@model MVC_Bakkal.Models.Marka
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <!-- Form yapısından faydalanılarak güncellemek istenilen yeni veriler alınmıştır ve güncelleme fonkiyounan gönderilmiştir.
+           Verinin önceki değeri System.Data.DataRow yapısı kullanılarak güncelenilecek verilerin value yardımıyla default değerleri atanmıştır.-->
+    <div class="form-horizontal">
+        <h4>Marka</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        @foreach (System.Data.DataRow DR in ViewBag.emprecord.Rows)
+        {
+            <form action="/Marka/Update" method="post">
+
+                <label>
+                    <span>Marka Adı :</span>
+                    <input type="text" name="m_adi" style="margin-top:50px" value="@DR["m_adi"]" />
+                </label>
+            </form>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Update" class="btn btn-default" />
+                </div>
+
+            </div>
+        }
+
+
+    </div>
+
+
+
+}
+
+<div>
+    @Html.ActionLink("Markalar", "List")
+</div>

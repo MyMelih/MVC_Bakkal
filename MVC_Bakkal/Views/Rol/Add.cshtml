@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+<!-- Bir form yapısı oluşurulmuş içindeki input değerleri add fonskiyoununa gönderilmiştir buton yardımıyla -->
+<body>
+    <div class="center">
+        <h1>Rol Ekle</h1>
+        <form action="/Rol/Add" method="post">
+            
+            <h3>
+                Rol Adı Girin
+
+            </h3>
+            <label>
+                <span>Rol Adı :</span>
+                <input type="text" name="r_adi" placeholder="Rol Adı girin.." style="margin-top:50px" />
+
+
+
+                <div class="button">
+                    <input type="submit" value="Add" style="margin-top:50px ; margin-left:10px">
+                </div>
+
+                
+                
+        </form>
+    </div>
+
+</body>
+</html>
+
+

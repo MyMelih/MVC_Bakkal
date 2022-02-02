@@ -1,0 +1,33 @@
+﻿
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<
+
+
+
+    <!-- Form ile veri alınır ve Login fonksiyonuna yollanır -->
+    <div class="center">
+        <h1>Login</h1>
+        <form action="/Login/Login" method="post">
+            <div class="txt_field">
+                <input type="text" required name="k_adi">
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" required name="şifre">
+                <span></span>
+                <label>Password</label>
+            </div>
+
+            <input type="submit" value="Login">
+
+        </form>
+    </div>
+
+
+

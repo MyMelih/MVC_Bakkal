@@ -1,0 +1,75 @@
+﻿@model MVC_Bakkal.Models.Satis
+
+@{
+    ViewBag.Title = "Update";
+}
+<!-- Form yapısından faydalanılarak güncellemek istenilen yeni veriler alınmıştır ve güncelleme fonkiyounan gönderilmiştir.
+               Verinin önceki değeri System.Data.DataRow yapısı kullanılarak güncelenilecek verilerin value yardımıyla default değerleri atanmıştır.-->
+
+
+<h2>Update</h2>
+
+@using (Html.BeginForm())
+{
+
+    <h3>
+        Satis Bilgilerini Girin
+
+    </h3>
+    foreach (System.Data.DataRow DR in ViewBag.emprecord.Rows)
+    {
+
+        <form action="/Satis/Update" method="post">
+
+
+            <label>
+                <span>Kullanıcı Id :</span>
+                <input type="number" name="k_id" style="margin-top:50px" value="@DR["kullanici_id"]" />
+
+            </label>
+            <label>
+                <span>Miktar :</span>
+                <input type="number" name="miktar" style="margin-top:50px" value="@DR["si_miktar"]" />
+
+            </label>
+            <label>
+                <span>Satis Tarihi :</span>
+                <input type="date" name="s_tarih" style="margin-top:50px" value="@DR["s_tarih"]" />
+
+            </label>
+            <label>
+                <span>Durum :</span>
+                <input type="text" name="durum" style="margin-top:50px" value="@DR["s_durum"]" />
+
+            </label>
+            <label>
+                <span>Fiyat :</span>
+                <input type="number" name="fiyat" style="margin-top:50px" value="@DR["si_fiyat"]" />
+
+            </label>
+            <label>
+                <span>İskonto :</span>
+                <input type="number" name="iskonto" style="margin-top:50px" value="@DR["si_iskonto"]" />
+
+            </label>
+            <label>
+                <span>Ürün :</span>
+                <input type="number" name="ürün_id" style="margin-top:50px" value="@DR["urun_id"]" />
+
+            </label>
+
+
+
+
+            <div class="button">
+                <input type="submit" value="Update" style="margin-top:50px ; margin-left:10px">
+            </div>
+
+        </form>
+    }
+
+}
+    <div>
+        @Html.ActionLink("Satis", "List")
+    </div>
+

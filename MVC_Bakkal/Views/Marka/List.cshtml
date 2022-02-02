@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!--Tablo kulanırarak veri listeleme işlemi gerçekleştirilir. ekleme silme ve güncelleme işlemleri için gerekli butonlara linkler verilmiştir.-->
+<div>
+    <div style="margin-top:50px ; margin-left:50px">
+        <div>
+            <h2>Markalar</h2>
+            <br />
+
+
+            <button type="button" class="btn btn-success"> <a href="/Marka/Add" style="text-decoration: none; color: white">Yeni Bir Marka Ekle</a> </button>
+            <hr />
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Marka Id</td>
+                    <td>Marka Adı</td>
+                    <td>İşlemler</td>
+
+                </tr>
+            </thead>
+            <tbody>
+               
+                @{ foreach (System.Data.DataRow table in ViewBag.table.Rows)
+                    {
+                        <tr>
+                            <th>   <a style="margin-right:50px">  @table["marka_id"]</a> </th>
+                            <th>      @table["m_adi"]</th>
+
+                            <!--Butonlara tıklayınca üzerindeki işlemlerin gerçekleşmesi için link üzerinden işlem yapar -->
+                            <th><button type="button" class="btn btn-danger"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Delete", "Delete", new { id = @table["marka_id"] })</a>  </button>  </th>
+                            <th> <button type="button" class="btn btn-warning"> <a style="text-decoration: none; color: white"> @Html.ActionLink("Update", "Update", new { @id = @table["marka_id"] }) </a> </button>     </th>
+                        </tr>
+
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+
+</div>
+
+        </div>
+    </div>
+
+
+
