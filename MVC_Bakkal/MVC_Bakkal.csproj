@@ -195,6 +195,7 @@
     <Content Include="Views\Ürün\Update.cshtml" />
     <Content Include="Views\Stok\Update.cshtml" />
     <Content Include="Views\Satis\Update.cshtml" />
+    <Content Include="Views\Home\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
